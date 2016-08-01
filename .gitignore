@@ -35,3 +35,5 @@ node_modules
 run.sh
 
 public/*.js
+
+.env

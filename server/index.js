@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 const passport = require('passport');
 const express = require('express');
 const FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;
@@ -39,7 +40,7 @@ server.use(express.static('public'));
 server.use(passport.initialize());
 server.use(passport.session());
 
-const host = process.env.HOST || 'http://localhost:9000';
+const host = process.env.HOST || 'https://localhost:9000';
 
 passport.use(new FitbitStrategy({
         clientID:     process.env.ID,
