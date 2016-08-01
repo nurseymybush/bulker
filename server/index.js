@@ -31,7 +31,8 @@ db.bind('measurements');
 server.use(bodyParser.json());
 server.use(session({
     secret: process.env.SESSION_SECRET || 'adsfdsfga',
-    store
+    store,
+    resave: true, saveUninitialized: true
 }));
 server.use(express.static('public'));
 
